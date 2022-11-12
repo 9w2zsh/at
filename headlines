@@ -1,0 +1,11 @@
+# Fetch Top Headlines
+# pip install requests
+# pip install bs4
+import requests
+from bs4 import BeautifulSoup
+url = "https://www.nbcnews.com/"
+response = requests.get(url)
+html = BeautifulSoup(response.text, "html.parser")
+for news in html.find_all("h3" ):
+    print("Headline:", news.text)
+    print("Link:", news.find("a")["href"])
