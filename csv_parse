@@ -1,13 +1,21 @@
 import csv
+
+"""
 def Parse_CSV(filename):
     with open(filename, 'rb') as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='|')
         for row in reader:
             print(', '.join(row))
+"""
+
+
 def Write_CSV():
     with open('test.csv', 'wb') as csvfile:
         w = csv.writer(csvfile, delimiter=',')
         w.writerow(['Name', 'Age'])
         w.writerow(['John', '23'])
         w.writerow(['Mary', '22'])
-Parse_CSV("test.csv")
+
+
+Write_CSV()
+# Parse_CSV("users.csv")
